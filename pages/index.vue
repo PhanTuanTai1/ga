@@ -33,7 +33,7 @@ import {Component, Vue} from "nuxt-property-decorator";
 })
 export default class Index extends Vue {
   TestEvent() {
-      this.$ga.event('category', 'click', 'label', 12);
+      this.$ga.event('testClickButton', 'click', 'button', 123);
       console.log("Clicked");
   }
 }
