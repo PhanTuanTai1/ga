@@ -22,21 +22,20 @@ import {Component, Vue} from "nuxt-property-decorator";
 
 @Component({
   created() {
-    if(process.client) {
-      this.$ga.page('/')
+      if(process.client) {
+        this.$ga.page('/')
+        this.$ga.event('category', 'action', 'label', 12);
+      }
+  },
+  data() {
+    return {
     }
   }
 })
 export default class Index extends Vue {
   TestEvent() {
-    // let value = this.$ga.event({
-    //   eventCategory: 'category',
-    //   eventAction: 'action',
-    //   eventLabel: 'label',
-    //   eventValue: 123
-    // })
-    this.$ga.event('category', 'action', 'label', 12)
-    alert("Sent to GA")
+      this.$ga.event('category', 'action', 'label', 12);
+      console.log("Clicked");
   }
 }
 </script>

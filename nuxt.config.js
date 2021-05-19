@@ -30,13 +30,14 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    '@nuxtjs/google-analytics'
+    '@nuxt/typescript-build'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-197514395-1'
+    }]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -46,9 +47,5 @@ export default {
         ['@babel/plugin-proposal-private-methods', { loose: true }]
       ]
     }
-  },
-
-  googleAnalytics: {
-    id: 'UA-197514395-1'
   }
 }
