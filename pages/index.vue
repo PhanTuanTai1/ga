@@ -24,7 +24,6 @@ import {Component, Vue} from "nuxt-property-decorator";
   created() {
       if(process.client) {
         this.$ga.page('/')
-        this.$ga.event('category', 'action', 'label', 12);
       }
   },
   data() {
@@ -34,7 +33,7 @@ import {Component, Vue} from "nuxt-property-decorator";
 })
 export default class Index extends Vue {
   TestEvent() {
-      this.$ga.event('category', 'action', 'label', 12);
+      this.$ga.event('category', 'click', 'label', 12);
       console.log("Clicked");
   }
 }
