@@ -8,6 +8,7 @@
       <div class="links">
         <button         
           class="button--green"
+          @click="TestEvent()"
         >
           Test 'click' event
         </button>
@@ -17,9 +18,27 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import {Component, Vue} from "nuxt-property-decorator";
 
-export default Vue.extend({})
+@Component({
+  created() {
+    if(process.client) {
+      this.$ga.page('/')
+    }
+  }
+})
+export default class Index extends Vue {
+  TestEvent() {
+    // let value = this.$ga.event({
+    //   eventCategory: 'category',
+    //   eventAction: 'action',
+    //   eventLabel: 'label',
+    //   eventValue: 123
+    // })
+    this.$ga.event('category', 'action', 'label', 12)
+    alert("Sent to GA")
+  }
+}
 </script>
 
 <style>
