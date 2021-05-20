@@ -8,9 +8,15 @@
       <div class="links">
         <button         
           class="button--green"
-          @click="TestEvent()"
+          @click="TestEvent('test button')"
         >
           Test 'click' event
+        </button>
+        <button         
+          class="button--green"
+          @click="TestEvent('go to google page');GoToPage('/google')"
+        >
+          Google Button
         </button>
       </div>
     </div>
@@ -32,9 +38,13 @@ import {Component, Vue} from "nuxt-property-decorator";
   }
 })
 export default class Index extends Vue {
-  TestEvent() {
-      this.$ga.event('event-click', 'click', 'button', 1);
-      console.log("Clicked");
+  TestEvent(label : string) {
+      this.$ga.event('event-click', 'indexPage', label, 1);
+      console.log(label);
+  }
+
+  GoToPage(page: string) {
+    this.$router.push(page);
   }
 }
 </script>
