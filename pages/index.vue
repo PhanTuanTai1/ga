@@ -39,7 +39,7 @@ import {Component, Vue} from "nuxt-property-decorator";
 })
 export default class Index extends Vue {
   TestEvent(label : string) {
-      this.$ga.event('event-click', 'indexPage', `${label}${this.$route.path}`, 1);
+      this.$ga.event('event-click', 'indexPage', `${label}${location.href}`, 1);
       console.log(`${location.href}`);
   }
 
