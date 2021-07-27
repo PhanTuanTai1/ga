@@ -1,8 +1,22 @@
 <template>
   <div class="container">
     <h1>Test Breadcrumb Google Bot</h1>
-    <script type="application/ld+json">
-      {
+    <script v-html="getJsonBreadcrumb" type="application/ld+json">
+      
+    </script>
+  </div>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from "nuxt-property-decorator";
+
+@Component({})
+export default class Breadcrumb extends Vue {
+  jsonBreadcrumb = {}
+
+
+  created() {
+     this.jsonBreadcrumb = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -20,15 +34,12 @@
           }
         ]
       }
-    </script>
-  </div>
-</template>
+  }
 
-<script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
+  get getJsonBreadcrumb() {
+      return this.jsonBreadcrumb;
+  }
 
-@Component({})
-export default class Breadcrumb extends Vue {
   layout() {
     return "default";
   }
