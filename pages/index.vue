@@ -18,6 +18,12 @@
         >
           Google Button
         </button>
+         <button         
+          class="button--green"
+          @click="GoToPage('/breadcrumb')"
+        >
+          Test Breadcrumb
+        </button>
       </div>
     </div>
   </div>
