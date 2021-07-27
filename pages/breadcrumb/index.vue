@@ -2,10 +2,10 @@
   <div class="container">
     <h1>Test Breadcrumb Google Bot</h1>
     <script type="application/ld+json">
-    [{
+      {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        "itemListElement": [{
+        "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
@@ -18,8 +18,8 @@
             "name": "The Lord of the Rings",
             "item": "https://example.com/books/the-lord-of-the-rings"
           }
-        }]
-    }]
+        ]
+      }
     </script>
   </div>
 </template>
